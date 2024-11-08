@@ -2,30 +2,33 @@
 Objective:
 The objective of this project is to design and implement a secure and efficient smart door control system using two microcontrollers (HMI_ECU and Control_ECU) that communicate via UART. The system integrates password authentication, EEPROM storage, motion detection via a PIR sensor, motor control through an H-bridge, and a buzzer for alerts, ensuring robust security features.
 
-Project Overview:
+**Project Overview:**
 This smart door control system utilizes two separate microcontrollers. The HMI_ECU functions as the interface for user interaction, allowing password entry and system control. The Control_ECU handles motor operations, stores data in external EEPROM, and responds to commands from the HMI_ECU.
 
-The system features:
+**The system features:**
 
-Password Protection: Secure access to door unlocking and system options.
-LCD and Keypad Interface: A user-friendly interface for entering and managing passwords.
-UART Communication: Communication between the HMI_ECU and Control_ECU.
-External EEPROM Storage: Secure storage for passwords and system data.
-Motorized Door Control: A motor controls the door via an H-bridge.
-PIR Sensor: Detects motion and manages door operation based on user presence.
-Buzzer Alerts: Activates in case of failed password attempts or system alerts.
-Features:
-Password Protection: Users can set and verify a password, which is securely stored in EEPROM.
-LCD and Keypad Interface: Allows users to input and manage passwords via an LCD and keypad.
-UART Communication: Data is transmitted between the two ECUs via UART.
-EEPROM Storage: Passwords and other system data are stored in an external EEPROM.
-Motorized Door Control: Door opening and closing are controlled by a motor and H-bridge driver.
-Buzzer Alert: A buzzer sounds for failed password attempts or security events.
-PIR Motion Sensor: The system detects motion and holds the door open for entering users.
-Password Change Option: Users can change their password after verification.
-Security Lock: The system locks for 1 minute after three consecutive incorrect password attempts.
-Hardware Components:
-HMI_ECU Connections:
+**Password Protection:** Secure access to door unlocking and system options.
+**LCD and Keypad Interface:** A user-friendly interface for entering and managing passwords.
+**UART Communication: **Communication between the HMI_ECU and Control_ECU.
+**External EEPROM Storage:** Secure storage for passwords and system data.
+**Motorized Door Control:** A motor controls the door via an H-bridge.
+**PIR Sensor:** Detects motion and manages door operation based on user presence.
+**Buzzer Alerts:** Activates in case of failed password attempts or system alerts.
+
+**Features:**
+**Password Protection:** Users can set and verify a password, which is securely stored in EEPROM.
+**LCD and Keypad Interface:** Allows users to input and manage passwords via an LCD and keypad.
+**UART Communication:** Data is transmitted between the two ECUs via UART.
+**EEPROM Storage:** Passwords and other system data are stored in an external EEPROM.
+**Motorized Door Control:** Door opening and closing are controlled by a motor and H-bridge driver.
+**Buzzer Alert:** A buzzer sounds for failed password attempts or security events.
+**PIR Motion Sensor: **The system detects motion and holds the door open for entering users.
+**Password Change Option:** Users can change their password after verification.
+**Security Lock:** The system locks for 1 minute after three consecutive incorrect password attempts.
+
+
+**Hardware Components:**
+**HMI_ECU Connections:**
 LCD (8-bit mode)
 RS pin connected to PC0
 E pin connected to PC1
@@ -67,11 +70,16 @@ If the new password matches, the system updates the EEPROM.
 Step 5 – Security Lock:
 If the password is entered incorrectly three times, the system locks for 1 minute, and a buzzer sounds for alerts.
 The LCD displays an error message during the lockout period, and no further input is accepted.
-System Requirements:
+
+
+
+**System Requirements:**
 System Frequency: 8 MHz
 Microcontroller: ATmega32
 Architecture: Two-layered architecture with HMI_ECU and Control_ECU
-Driver Requirements:
+
+
+**Driver Requirements:**
 GPIO Driver:
 Use the GPIO driver from the course for both ECUs.
 UART Driver:
