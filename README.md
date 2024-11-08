@@ -1,5 +1,5 @@
 # Dual Microcontroller-Based Door Locker Security System Using Password Authentication
-Objective:
+**Objective:**
 The objective of this project is to design and implement a secure and efficient smart door control system using two microcontrollers (HMI_ECU and Control_ECU) that communicate via UART. The system integrates password authentication, EEPROM storage, motion detection via a PIR sensor, motor control through an H-bridge, and a buzzer for alerts, ensuring robust security features.
 
 **Project Overview:**
@@ -53,21 +53,24 @@ Motor (for Door Control)
 Connected to the H-bridge motor driver
 PIR Motion Sensor
 Connected to PC2
-Operation Steps:
-Step 1 – Create a System Password:
+
+
+**Operation Steps:**
+**Step 1** – Create a System Password:
 The LCD prompts the user to enter a 5-digit password, which is shown as * on the screen.
 After confirmation, the system saves the password in EEPROM.
 If the passwords match, proceed to Step 2. If they don’t, prompt for the password again.
-Step 2 – Main Options:
+**Step 2** – Main Options:
 The LCD displays the main system options.
-Step 3 – Open Door:
+****Step 3** **– Open Door:
 The user enters a password to unlock the door.
 If the password matches the stored one, the motor rotates to unlock the door for 15 seconds.
 The door remains open as long as motion is detected by the PIR sensor. When motion stops, the door locks after 15 seconds.
-Step 4 – Change Password:
+**Step 4** – Change Password:
 The user can change the password by re-entering the correct old password.
 If the new password matches, the system updates the EEPROM.
-Step 5 – Security Lock:
+
+**Step 5** – Security Lock:
 If the password is entered incorrectly three times, the system locks for 1 minute, and a buzzer sounds for alerts.
 The LCD displays an error message during the lockout period, and no further input is accepted.
 
@@ -80,25 +83,25 @@ Architecture: Two-layered architecture with HMI_ECU and Control_ECU
 
 
 **Driver Requirements:**
-GPIO Driver:
+**GPIO Driver:**
 Use the GPIO driver from the course for both ECUs.
-UART Driver:
+**UART Driver:**
 Modify the UART_init function to accept a pointer to the UART_ConfigType structure.
-LCD Driver:
+**LCD Driver:**
 Use a 2x16 LCD connected to the HMI_ECU.
-Keypad Driver:
+**Keypad Driver:**
 Use a 4x4 keypad for user interaction with the HMI_ECU.
-I2C Driver:
+**I2C Driver:**
 Implement the I2C driver for communication between Control_ECU and external EEPROM.
-PWM Driver:
+**PWM Driver:**
 Implement PWM for motor control using Timer0.
-Timer Driver:
+**Timer Driver:**
 Implement a timer driver for the management of door and display operations.
-Buzzer Driver:
+**Buzzer Driver:**
 Implement the buzzer driver to handle system alerts.
-PIR Driver:
+**PIR Driver:**
 Implement a PIR sensor driver to detect motion and manage door operations.
-DC Motor Driver:
+**DC Motor Driver:**
 Implement motor control using Timer0 PWM.
-EEPROM Driver:
+**EEPROM Driver:**
 Implement the EEPROM driver to manage data storage via I2C.
